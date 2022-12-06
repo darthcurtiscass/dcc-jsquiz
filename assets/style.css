@@ -1,3 +1,36 @@
 #hello {
     display: none;
 }
+
+.header {
+    display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
+
+#correct {
+    color: black;
+}
+
+.wrong {
+    color: black;
+    
+}
+
+#question-1 {
+    display: none;
+}
+
+#question-2 {
+    /* display: flex; */
+}
+
+.answer {
+    
+}
+
+.qa-block {
+    display: flex;
+    flex-direction: column;
+}
