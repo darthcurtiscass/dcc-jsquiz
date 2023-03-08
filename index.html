@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1>Javascript Quiz</h1>
-            <h2>Test your knowledge of the most irritating language!</h2>
-            <button id = "buttonSize">START QUIZ</button>
-    </header>    
-    <div class="questionElements hide">
-        <h1 class="qHeader"></h1>
-            <ul class="options">
-                
-            </ul>      
-    </div>   
+      <h1 style = "display: flex; justify-content: center;">Javascript Quiz</h1>
+      <h2 style = "display: flex; justify-content: center;">Test your knowledge of the most irritating language!</h2>
+        <div style = "display: flex; justify-content: center;">
+            <button id="buttonSize">START QUIZ</button>
+        </div>
+    </header>
+    <div class="timer"></div>
+
+    <div class="questionElements hide" style = "display: flex; align-items: center; flex-direction: column;">
+      <h1 class="qHeader"></h1>
+      <ul class="options"></ul>
+    </div>
+
+    <div class="score"></div>
+    <div class="results">
+        <div id="time"></div>
+        <div id="finalScore"></div>
+        <div id="name"></div>
+    </div>
+    
 
     <!-- <button id="click">click to see me</button>
     <button id="remove">click to remove</button>
     <button id="opposite">Opposite</button> -->
     <script src="./assets/script.js"></script>
-</body>
+  </body>
 </html>
