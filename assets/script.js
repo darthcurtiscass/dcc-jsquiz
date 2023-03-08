@@ -45,16 +45,20 @@ var qHeader = document.querySelector(".qHeader");
 var q4 = questions[4];
 
 var timerEl = document.querySelector(".timer");
-var finalTime = document.querySelector("#time");
+var finalTime = document.querySelector(".time");
 var timeLeft = 90;
 timerEl.textContent = timeLeft;
 var timeInterval;
 
 var scoreKeeper = 0;
 var scoreEl = document.querySelector(".score");
-var finalScore = document.querySelector("#finalScore");
+var finalScore = document.querySelector(".finalScore");
 
+var entry = document.createElement("input")
+var submit = document.createElement("button")
+var label = document.createElement("h5")
 var nameText = document.querySelector("#name");
+var data = document.querySelector(".displayData")
 
 function startQuiz() {
   document.querySelector(".header").classList.add("hide");
@@ -109,6 +113,7 @@ function confirmChoice(selection) {
   } else {
     console.log("wrong");
     scoreKeeper -= 1;
+    timeLeft -= 10;
   }
   scoreEl.textContent = scoreKeeper;
   currentQ++;
@@ -135,9 +140,7 @@ function endCountdown() {
   finalTime.append(timeMessage);
 
 
-  var entry = document.createElement("input")
-  var submit = document.createElement("button")
-  var label = document.createElement("h5")
+ 
   
   label.textContent = "Enter Your name "
 
@@ -150,14 +153,29 @@ function endCountdown() {
   nameText.append(submit)
 
   entry.addEventListener("input", function() {
-    // Get the value of the input field
+
     var inputText = entry.value;
   
-    // Save the value to local storage
     localStorage.setItem("myInputValue", inputText);
     localStorage.setItem("myscore", scoreKeeper)
   });
 }
 
+function displayData() {
+    nameText.classList.add('hide')
+    finalScore.classList.add('hide')
+    finalTime.classList.add('hide')
+    
+    var dataEl = document.createElement('h3');
+    var dataEl2 = document.createElement('h4');
+    dataEl.textContent = localStorage.getItem("myInputValue")
+    dataEl2.textContent = localStorage.getItem("myscore")
+    console.log(localStorage.getItem("myInputValue"))
+
+    data.append(dataEl)
+        data.append(dataEl2)
+}
+
+submit.addEventListener("click", displayData)
 optionList.addEventListener("click", optionChoice);
 startButton.addEventListener("click", startQuiz);
